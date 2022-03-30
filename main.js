@@ -76,7 +76,7 @@ function addCart(itemId){
 let foundFlavor = iceCream.find(flavor => flavor.id == itemId)
 if(foundFlavor){
     cart.push(foundFlavor)
-    console.log('cart?', cart);
+    // console.log('cart?', cart);
 drawCart()
 return
 }
@@ -100,10 +100,12 @@ return
 
 function drawCart(){
     let template = ''
+    let total = 0
     cart.forEach((item, index) => { template += /*html*/ `
     <div class="col-12 d-flex">
     <h5>${item.name}</h5>
     <h5>${item.price}</h5>
+    <button onclick="removeItem(${index})"> </button>
     </div>
     
     
@@ -112,11 +114,16 @@ function drawCart(){
     })
     // console.log('cart??', template)
     document.getElementById('Cart').innerHTML = template
-    document.getElementById('total').innerText = total
+    document.getElementById('total').innerText = total.toString()
 }
 
-
-
+function removeItem(index){
+const removedItem = cart[index]
+total -= removeItem.price
+cart.splice(index, 1)
+console.log('after splice', cart)
+drawCart()
+}
 
 drawIceCream()
 drawVessels()
