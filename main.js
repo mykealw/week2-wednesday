@@ -121,7 +121,7 @@ function removeItem(index){
 const removedItem = cart[index]
 total -= removeItem.price
 cart.splice(index, 1)
-console.log('after splice', cart)
+// console.log('after splice', cart)
 drawCart()
 }
 
