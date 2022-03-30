@@ -1,0 +1,21 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: cornsilk;
+}
+
+main{
+    flex-grow: 1;
+}
+
+.imgg{
+    object-fit: cover;
+    height: 35 px;
+    width: 100%;
+}
+
+.cart{
+
+    min-height: 80vh;
+}
